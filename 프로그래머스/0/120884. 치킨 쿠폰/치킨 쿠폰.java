@@ -1,20 +1,21 @@
 class Solution {
     public int solution(int chicken) {
         int coupon = chicken;
-        int answer = 0;
-        while(true){
-            if(coupon<10){
+        int sum = 0;
+        while(true) {
+            if (coupon >= 10) {
+                int a = coupon/10;
+                int b = coupon%10;
+                coupon = a + b;
+                sum += a;
+                    if(coupon<10) {
+                        break;
+                    }
+           
+            } 
+            if(coupon<10)
                 break;
-            }
-            answer +=coupon/10;
-            coupon = coupon/10 + coupon%10;
-            
-            
-            
         }
-      
-        
-        
-        return answer;
+        return sum;
     }
 }
